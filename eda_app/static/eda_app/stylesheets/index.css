@@ -1,0 +1,35 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#to-data {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px;
+}
+
+img {
+  border: 1px solid black;
+  padding: 5px;
+  margin: 15px;
+}
+
+.image {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+li {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px;
+}

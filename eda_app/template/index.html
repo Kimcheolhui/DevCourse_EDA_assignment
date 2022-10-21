@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static '\eda_app\stylesheets\index.css' %}?after ">
+	<title>Index Page</title>
+</head>
+
+<body>
+	<h1>Simple EDA for Titanic Data</h1>
+	<h2 id="author_info">4기 A-4조 김철희</h2>
+	<div id="to-data"><a href="https://www.kaggle.com/competitions/titanic/submissions">캐글 타이타닉</a></div>
+	<h2>train.csv 데이터</h2>
+	<img id="raw" src="{% static '\eda_app\images\raw_data.png' %}" style="width: 1000px;" alt="기본 데이터">
+	<div class="section">
+		<h2>데이터 필드</h2>
+		<ul>
+			<li>Survived : 0=사망, 1=생존</li>
+			<li>Pclass : 1=1등석, 2=2등석, 3=3등석</li>
+			<li>Sex : male=남성, female=여성</li>
+			<li>Age : 나이</li>
+			<li>SibSp : 타이타닉 호에 동승한 자매 / 배우자의 수</li>
+			<li>Parch : 타이타닉 호에 동승한 부모 / 자식의 수</li>
+			<li>Ticket : 티켓 번호</li>
+			<li>Fare : 승객 요금</li>
+			<li>Cabin : 방 호수</li>
+			<li>Embarked : 탑승지, C=셰르부르, Q=퀸즈타운, S=사우샘프턴</li>
+		</ul>
+		<div class="image">
+			<img id="data_type" src="{% static '\eda_app\images\data_type.png' %}" style="width: 400px;" alt="데이터 타입">
+			<img id="data_corr" src="{% static '\eda_app\images\data_corr.png' %}" style="width: 700px;" alt="데이터간의 상관관계">
+		</div>
+		<ol>
+			<li>Survived는 Pclass, Fare와 높은 상관관계를 보여준다.</li>
+			<li>Pclass는 Age, Fare와 높은 상관관계를 보여준다.</li>
+		</ol>
+	</div>
+	<div class="section">
+		<h2>생존자와 사망자</h2>
+		<div class="image">
+			<img id="count_survived" src="{% static '\eda_app\images\count_survived.png' %}" style="width: 700px;"
+				alt="Survived and Dead">
+		</div>
+		<ol>
+			<li>사망자가 생존자보다 상대적으로 많다.</li>
+		</ol>
+	</div>
+	<div class="section">
+		<h2>좌석등급(Pclass)과 생존 여부(Survived)의 상관관계</h2>
+		<div class="image">
+			<img id="count_survived" src="{% static '\eda_app\images\pclass_survived.png' %}" style="width: 700px;"
+				alt="Pclass and Survived">
+		</div>
+		<ol>
+			<li>Pclass가 낮을 수록(티켓등급이 높을 수록) 생존율이 높다.</li>
+		</ol>
+	</div>
+	<div class="section">
+		<h2>성별(Sex)와 생존 여부(Survived)의 상관관계</h2>
+		<div class="image">
+			<img id="count_survived_sex" src="{% static '\eda_app\images\sex_survived.png' %}" style="width: 600px;"
+				alt="Sex and Survived">
+			<img id="ratio_survived_sex" src="{% static '\eda_app\images\sex_survived_ratio.png' %}" style="width: 600px;"
+				alt="Sex and Survived Ratio">
+		</div>
+		<ol>
+			<li>사망자의 대다수는 남성이다.</li>
+			<li>여성 생존자는 남성 생존자의 약 2배이다.</li>
+		</ol>
+	</div>
+	<div class="section">
+		<h2>연령(Age)과 생존 여부(Survived)의 상관관계</h2>
+		<div class="image">
+			<img id="age_survived_table" src="{% static '\eda_app\images\age_survived_table.png' %}" style="width: 300px;"
+				alt="Age and Survived Table">
+			<img id="age_survived_graph" src="{% static '\eda_app\images\age_survived_graph.png' %}" style="width: 700px;"
+				alt="Age and Survived Graph">
+		</div>
+		<ol>
+			<li>생존자의 평균 연령이 조금 더 낮다.</li>
+			<li>생존자 중 10세 이하 비율이 사망자 중 10세 이하 비율보다 높다.</li>
+		</ol>
+	</div>
+	<div class="section">
+		<h2>승객요금(Fare)과 생존 여부(Survived)의 상관관계</h2>
+		<div class="image">
+			<img id="fare_survived_table" src="{% static '\eda_app\images\fare_survived_table.png' %}" style="width: 300px;"
+				alt="Fare and Survived Table">
+			<img id="fare_survived_graph" src="{% static '\eda_app\images\fare_survived_graph.png' %}" style="width: 700px;"
+				alt="Fare and Survived Graph">
+		</div>
+		<ol>
+			<li>승객요금이 높을 수록 생존율이 높다.</li>
+		</ol>
+	</div>
+</body>
+
+</html>
